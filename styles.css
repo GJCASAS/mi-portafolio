@@ -3,9 +3,10 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     background-color: #f4f7f6;
-    color: #333;
+    color: #1e293b; /* Texto oscuro para el modo claro */
     margin: 0;
     padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Estilo del encabezado y menú */
@@ -18,13 +19,14 @@ header {
 
 header h1 {
     margin-bottom: 0.5rem;
+    color: #ffffff;
 }
 
 /* Estilo para la foto de perfil */
 .foto-perfil {
     width: 120px;
     height: 120px;
-    border-radius: 50%; /* La hace completamente redonda */
+    border-radius: 50%;
     object-fit: cover;
     border: 3px solid #ffffff;
     margin: 10px 0;
@@ -39,10 +41,10 @@ nav a {
 }
 
 nav a:hover {
-    color: #3498db; /* Cambia de color al pasar el mouse */
+    color: #3498db;
 }
 
-/* Secciones de contenido */
+/* Secciones de contenido (Modo Claro) */
 main {
     max-width: 800px;
     margin: 20px auto;
@@ -50,14 +52,22 @@ main {
 }
 
 section {
-    background: white;
+    background-color: #ffffff;
+    color: #1e293b; /* Garantiza texto oscuro dentro de las cajas blancas */
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Botón interactivo */
+section h1, 
+section h2, 
+section h3, 
+section p {
+    color: #1e293b;
+}
+
+/* Botón interactivo general */
 button {
     background-color: #3498db;
     color: white;
@@ -70,7 +80,9 @@ button {
 
 button:hover {
     background-color: #2980b9;
-}/* Cuadrícula adaptable */
+}
+
+/* Cuadrícula adaptable */
 .grid-proyectos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -84,10 +96,18 @@ button:hover {
     border-radius: 8px;
     padding: 1.2rem;
     background-color: #ffffff;
+    color: #1e293b;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.proyecto-card h1,
+.proyecto-card h2,
+.proyecto-card h3,
+.proyecto-card p {
+    color: #1e293b;
 }
 
 .proyecto-card:hover {
@@ -112,7 +132,7 @@ button:hover {
     font-weight: 600;
 }
 
-/* Botón de enlace */
+/* Botón de enlace a proyectos */
 .btn-proyecto {
     display: inline-block;
     text-align: center;
@@ -129,7 +149,9 @@ button:hover {
     font-size: 0.8rem;
     color: #64748b;
     font-style: italic;
-}/* Botón de cambio de tema */
+}
+
+/* Botón del selector de tema */
 .btn-theme {
     background-color: #ffffff;
     color: #1e293b;
@@ -142,62 +164,40 @@ button:hover {
     transition: background-color 0.3s ease;
 }
 
-/* Estilos aplicados cuando el modo oscuro está activo */
-body.dark-mode {
-    background-color: #0f172a;
-    color: #f8fafc;
-}
+/* ===================================================
+   ESTILOS DE MODO OSCURO (Solo se activan con .dark-mode)
+   =================================================== */
 
-body.dark-mode .tarjeta,
-body.dark-mode .proyecto-card {
-    background-color: #1e293b;
-    border-color: #334155;
-    color: #f8fafc;
-}
-
-body.dark-mode .tags span {
-    background-color: #334155;
-    color: #f8fafc;
-}/* --- ESTILOS BASE (Modo Claro por defecto) --- */
-body {
-    background-color: #f1f5f9;
-    color: #1e293b;
-}
-
-.tarjeta, 
-.proyecto-card {
-    background-color: #ffffff;
-    color: #1e293b;
-}
-
-.tarjeta h1, 
-.tarjeta h2, 
-.tarjeta h3, 
-.tarjeta p {
-    color: #1e293b;
-}
-
-/* --- ESTILOS MODO OSCURO (Solo se aplican con la clase .dark-mode) --- */
 body.dark-mode {
     background-color: #0f172a !important;
     color: #f8fafc !important;
 }
 
-body.dark-mode .tarjeta,
+body.dark-mode section,
 body.dark-mode .proyecto-card {
     background-color: #1e293b !important;
     border-color: #334155 !important;
     color: #f8fafc !important;
 }
 
-body.dark-mode .tarjeta h1,
-body.dark-mode .tarjeta h2,
-body.dark-mode .tarjeta h3,
-body.dark-mode .tarjeta p {
+body.dark-mode section h1,
+body.dark-mode section h2,
+body.dark-mode section h3,
+body.dark-mode section p,
+body.dark-mode .proyecto-card h1,
+body.dark-mode .proyecto-card h2,
+body.dark-mode .proyecto-card h3,
+body.dark-mode .proyecto-card p {
     color: #f8fafc !important;
 }
 
 body.dark-mode .tags span {
     background-color: #334155 !important;
     color: #f8fafc !important;
+}
+
+body.dark-mode .btn-theme {
+    background-color: #1e293b;
+    color: #f8fafc;
+    border-color: #475569;
 }

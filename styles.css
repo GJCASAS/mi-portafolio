@@ -158,7 +158,26 @@ body.dark-mode .proyecto-card {
 body.dark-mode .tags span {
     background-color: #334155;
     color: #f8fafc;
-}/* --- ESTILOS MODO OSCURO --- */
+}/* --- ESTILOS BASE (Modo Claro por defecto) --- */
+body {
+    background-color: #f1f5f9;
+    color: #1e293b;
+}
+
+.tarjeta, 
+.proyecto-card {
+    background-color: #ffffff;
+    color: #1e293b;
+}
+
+.tarjeta h1, 
+.tarjeta h2, 
+.tarjeta h3, 
+.tarjeta p {
+    color: #1e293b;
+}
+
+/* --- ESTILOS MODO OSCURO (Solo se aplican con la clase .dark-mode) --- */
 body.dark-mode {
     background-color: #0f172a !important;
     color: #f8fafc !important;
@@ -171,10 +190,10 @@ body.dark-mode .proyecto-card {
     color: #f8fafc !important;
 }
 
-body.dark-mode h1,
-body.dark-mode h2,
-body.dark-mode h3,
-body.dark-mode p {
+body.dark-mode .tarjeta h1,
+body.dark-mode .tarjeta h2,
+body.dark-mode .tarjeta h3,
+body.dark-mode .tarjeta p {
     color: #f8fafc !important;
 }
 

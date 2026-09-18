@@ -129,4 +129,33 @@ button:hover {
     font-size: 0.8rem;
     color: #64748b;
     font-style: italic;
+}/* Botón de cambio de tema */
+.btn-theme {
+    background-color: #ffffff;
+    color: #1e293b;
+    border: 1px solid #cbd5e1;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilos aplicados cuando el modo oscuro está activo */
+body.dark-mode {
+    background-color: #0f172a;
+    color: #f8fafc;
+}
+
+body.dark-mode .tarjeta,
+body.dark-mode .proyecto-card {
+    background-color: #1e293b;
+    border-color: #334155;
+    color: #f8fafc;
+}
+
+body.dark-mode .tags span {
+    background-color: #334155;
+    color: #f8fafc;
 }
